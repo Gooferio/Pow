@@ -172,25 +172,25 @@ internal struct SpraySimulation<ParticleView: View>: ViewModifier, Simulative {
             .particleLayerBackground(layer: layer, isEnabled: !isSimulationPaused) {
                 overlay
             }
-            .usesCustomHaptics()
-            .onChange(of: impulseCount) { newValue in
-                let ping = Ping(
-                    id: UUID(),
-                    progress: 0,
-                    velocity: Float(initialVelocity),
-                    target: 1.0
-                )
-
-                withAnimation(nil) {
-                    pings.append(ping)
-                }
-
-                #if os(iOS)
-                if let hapticPattern {
-                    Haptics.play(hapticPattern)
-                }
-                #endif
-            }
+//            .usesCustomHaptics()
+//            .onChange(of: impulseCount) { newValue in
+//                let ping = Ping(
+//                    id: UUID(),
+//                    progress: 0,
+//                    velocity: Float(initialVelocity),
+//                    target: 1.0
+//                )
+//
+//                withAnimation(nil) {
+//                    pings.append(ping)
+//                }
+//
+//                #if os(iOS)
+//                if let hapticPattern {
+//                    Haptics.play(hapticPattern)
+//                }
+//                #endif
+//            }
     }
 
     private func update(_ step: Double) {
