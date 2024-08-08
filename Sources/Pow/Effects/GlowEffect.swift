@@ -115,7 +115,7 @@ internal struct PulseGlowModifier: ViewModifier, Simulative {
 
     var initialVelocity: CGFloat = 0
 
-    let spring = Spring(zeta: 0.75, stiffness: 15, mass: 1)
+    let spring = Spring(zeta: 0.75, stiffness: 5, mass: 1)
 
     var color: Color
 
@@ -150,7 +150,7 @@ internal struct PulseGlowModifier: ViewModifier, Simulative {
                 if glowVelocity <= 0.05 {
                     glowVelocity = 5
                 } else {
-                    glowVelocity += 1.5
+                    glowVelocity += 1
                 }
 
                 glowVelocity = min(glowVelocity, 5)
